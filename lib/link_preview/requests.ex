@@ -8,6 +8,7 @@ defmodule LinkPreview.Requests do
   plug Tesla.Middleware.BaseUrl, "http://"
   plug Tesla.Middleware.DecompressResponse
   plug Tesla.Middleware.FollowRedirects
+  plug Tesla.Middleware.Headers, [{"user-agent", "Elixir-LinkPreview/v1.0.2"}]
 
   @doc """
     Check if given url leads to image.
